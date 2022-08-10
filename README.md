@@ -1,5 +1,5 @@
 # sap-api-integrations-service-agent-reads  
-sap-api-integrations-service-agent-reads は、外部システム(特にエッジコンピューティング環境)をSAPと統合することを目的に、SAP API サービス代行データを取得するマイクロサービスです。  
+sap-api-integrations-service-agent-reads は、外部システム(特にエッジコンピューティング環境)をSAPと統合することを目的に、SAP API サービスエージェントデータを取得するマイクロサービスです。  
 sap-api-integrations-service-agent-reads には、サンプルのAPI Json フォーマットが含まれています。  
 sap-api-integrations-service-agent-reads は、オンプレミス版である（＝クラウド版ではない）SAPC4HANA API の利用を前提としています。クラウド版APIを利用する場合は、ご注意ください。  
 https://api.sap.com/api/serviceagent/overview  
@@ -32,7 +32,7 @@ sap-api-integrations-service-agent-reads において、API への値入力条�
 
 ### SDC レイアウト
 
-* inoutSDC.ServiceAgentCollection.ServiceAgentID（サービス代行ID）
+* inoutSDC.ServiceAgentCollection.ServiceAgentID（サービスエージェントID）
 
 
 ## SAP API Bussiness Hub の API の選択的コール
@@ -90,7 +90,7 @@ func (c *SAPAPICaller) AsyncGetServiceAgent(serviceAgentID string, accepter []st
 
 ## Output  
 本マイクロサービスでは、[golang-logging-library-for-sap](https://github.com/latonaio/golang-logging-library-for-sap) により、以下のようなデータがJSON形式で出力されます。  
-以下の sample.json の例は、SAP の サービス代行データ が取得された結果の JSON の例です。  
+以下の sample.json の例は、SAP の サービスエージェントデータ が取得された結果の JSON の例です。  
 以下の項目のうち、"ObjectID" ～ "ETag" は、/SAP_API_Output_Formatter/type.go 内 の Type ServiceAgentCollection {} による出力結果です。"cursor" ～ "time"は、golang-logging-library-for-sap による 定型フォーマットの出力結果です。  
 
 ```
